@@ -1,0 +1,141 @@
+@font-face {
+    font-family: neon;
+    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+  }
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+    background-color: black;
+}
+.container{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 280px;
+    right: 0;
+    top: 530px;
+    width: 0px;
+    height: 0px;
+
+}
+.container1{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 20px;
+    width: -100px;
+    height: 0px;
+
+
+}
+  .neon {
+    font-family: neon;
+    color: #426DFB;
+    font-size: 9vw;
+    line-height: 9vw;
+    text-shadow: 0 0 3vw #426DFB;
+  }
+  .flux {
+    font-family: neon;
+    color: #426DFB;
+    font-size: 5vw;
+    line-height: 9vw;
+    text-shadow: 0 0 3vw #2356FF;
+  }
+  
+#sol{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 150px;
+    width: 400px;
+    height: 400px;
+    animation-name: rotacion;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#tierra{
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+        left: 0;
+        top: 325px;
+        width: 40px;
+        height: 40px;
+        z-index: 1;
+        animation-name: traslacion;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+}
+#img-tierra{
+    animation-name: sombra;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+.neon {
+    animation: neon 1s ease infinite;
+    -moz-animation: neon 1s ease infinite;
+    -webkit-animation: neon 1s ease infinite;
+  }
+  .flux {
+    animation: flux 2s linear infinite;
+    -moz-animation: flux 2s linear infinite;
+    -webkit-animation: flux 2s linear infinite;
+    -o-animation: flux 2s linear infinite;
+  }
+  @keyframes neon {
+    0%,
+    100% {
+      text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+      color: #FED128;
+    }
+    50% {
+      text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+      color: #806914;
+    }
+  }
+  @keyframes flux {
+    0%,
+    100% {
+      text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+      color: #28D7FE;
+    }
+    50% {
+      text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+      color: #146C80;
+    }
+  }
+ 
+@keyframes rotacion{
+    from{transform: rotateZ(0deg);}
+    to{transform: rotateZ(360deg);}
+}
+@keyframes traslacion{
+    0%{z-index: 1;}
+    25%{left: 650px;}
+    50%{left: 1300px}
+    50%{z-index: -1;}
+    75%{left: 650px}
+    100%{left: 0; z-index: -1;}
+}
+@keyframes sombra{
+    0%{opacity: 1;}
+    25%{opacity: 1;}
+    50%{opacity: 0;}
+    51%{opacity: 0;}
+    75%{opacity: 1;}
+    100%{opacity: 1;}
+
+}
